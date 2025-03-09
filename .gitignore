@@ -1,0 +1,7 @@
+.phpunit.result.cache
+composer.lock
+
+.idea/
+vendor/
+tests/App/
+
