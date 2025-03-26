@@ -136,7 +136,7 @@ class AccessToken implements RefreshableAccessTokenInterface
             throw new HttpException('Failed to get access_token: '. $response['msg']);
         }
 
-        $this->cache->set($this->getKey(), $response['data']['access_token'], intval($response['data']['expire_in']));
+        $this->cache->set($this->getKey(), $response['data']['access_token'], intval($response['data']['expire_in']) - 10);
 
         return $response['data']['access_token'];
     }

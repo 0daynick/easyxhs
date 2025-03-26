@@ -117,7 +117,7 @@ class Application implements ApplicationInterface
         return (new AccessTokenExpiredRetryStrategy($retryConfig))
             ->decideUsing(function (AsyncContext $context, ?string $responseContent): bool {
                 return ! empty($responseContent)
-                    && str_contains($responseContent, '42001')
+                    && str_contains($responseContent, '410101')
                     && str_contains($responseContent, 'access_token expired');
             });
     }
